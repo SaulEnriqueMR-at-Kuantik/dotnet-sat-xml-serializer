@@ -1,6 +1,4 @@
 using System.Globalization;
-using KPac.Domain.CatalgosSAT;
-using KpacModels.Shared.Services;
 using KpacModels.Shared.XmlProcessing.Validator.Catalogos;
 
 namespace KpacModels.Shared.XmlProcessing.Validator;
