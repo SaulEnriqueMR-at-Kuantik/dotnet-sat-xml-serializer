@@ -27,8 +27,4 @@
       <PackageReference Include="RestSharp" Version="112.1.1-alpha.0.13" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Include=".github\workflows\nuget.yml" />
-    </ItemGroup>
-
 </Project>
