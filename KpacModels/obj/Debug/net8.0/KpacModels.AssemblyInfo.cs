@@ -10,13 +10,15 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("KpacModels")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Diego Arellano Moreno")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("XML models for CFDI")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03076e18d25636676dd95c5d2aa09e578deb0ba6")]
 [assembly: System.Reflection.AssemblyProductAttribute("KpacModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KpacModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/SaulEnriqueMR-at-Kuantik/dotnet-sat-xml-serializer.git")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

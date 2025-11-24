@@ -2,6 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
+        <PackageId>Shared.XmlModels</PackageId>
+        <Authors>Diego Arellano Moreno</Authors>
+        <Description>XML models for CFDI</Description>
+        <PackageTags>XML models in classes</PackageTags>
+        <PackageProjectUrl>https://github.com/SaulEnriqueMR-at-Kuantik/dotnet-sat-xml-serializer.git</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/SaulEnriqueMR-at-Kuantik/dotnet-sat-xml-serializer.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
