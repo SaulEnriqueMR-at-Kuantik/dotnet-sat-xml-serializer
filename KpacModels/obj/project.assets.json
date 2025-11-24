@@ -886,7 +886,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/KpacModels.csproj",
-      "projectName": "Shared.XmlModels",
+      "projectName": "Kuantik.XmlModels",
       "projectPath": "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/KpacModels.csproj",
       "packagesPath": "/Users/DiegoArellano/.nuget/packages/",
       "outputPath": "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/obj/",

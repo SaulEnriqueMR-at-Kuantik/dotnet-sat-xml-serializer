@@ -1,9 +1,8 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.Constants;
-using Newtonsoft.Json;
+using KpacModels.Shared.Models.Constants;
 
-namespace KPac.Domain.Mapping.Xml.Retenciones.Complementos.Intereses;
+namespace KpacModels.Shared.Models.Retenciones.Complementos.Intereses;
 
 [XmlRoot(ElementName = "Intereses", Namespace = Namespaces.Intereses10)]
 public class Intereses10

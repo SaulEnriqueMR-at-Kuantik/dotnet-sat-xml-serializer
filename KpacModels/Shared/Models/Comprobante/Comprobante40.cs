@@ -1,11 +1,8 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KPac.Application.Formatter;
-using KPac.Domain.Mapping.Xml.Comprobante;
-using KpacModels.Shared.Constants;
+using KpacModels.Shared.Models.Constants;
 using KpacModels.Shared.XmlProcessing.Formatter;
 using KpacModels.Shared.XmlProcessing.Formatter.Interface;
-using KpacModels.Shared.XmlProcessing.Validator.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -139,6 +136,21 @@ public class Comprobante40
     [XmlElement(ElementName = "Impuestos", Namespace = Namespaces.CfdiLocation)]
     public Impuestos? Impuestos { get; set; }
     
+    private string? _addendaXml;
+    
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [XmlIgnore]
+    [XmlElement(ElementName = "Addenda", Namespace = Namespaces.CfdiLocation)]
+    public Addenda? Addenda { get; set; }
+
+    [JsonPropertyName("AddendaString")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [XmlIgnore]
+    public string? AddendaXml 
+    { 
+        get => _addendaXml;
+        set => _addendaXml = value;
+    }
     
     [XmlIgnore]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -200,46 +212,6 @@ public class Comprobante40
         if(Complemento != null)
             await Complemento.Format(visitor);
     }
-    
-    public async Task Accept(IVisitor visitor)
-    {
-        await visitor.VisitBasic(this);
-        if(visitor.HasErrors())
-            return;
-        Emisor?.Accept(visitor);
-        Receptor?.Accept(visitor);
-        if(visitor.HasErrors())
-            return;
-        InformacionGlobal?.Accept(visitor);
-        if(visitor.HasErrors())
-            return;
-        if (CfdisRelacionados != null)
-        {
-            var cfdiRelacionadosCount = CfdisRelacionados.Count;
-            for (var i = 0; i < cfdiRelacionadosCount; i++)
-            {
-                var cfdiRelacionado = CfdisRelacionados[i];
-                await cfdiRelacionado.Accept(visitor, i + 1);
-            }
-        }
-        if(visitor.HasErrors())
-            return;
-        if (Conceptos != null)
-        {
-            var conceptosLenght = Conceptos.Count;
-            for (var i = 0; i < conceptosLenght; i++)
-            {
-                var concepto = Conceptos[i];
-                await concepto.Accept(visitor, i + 1);
-            }
-        }
-        if(visitor.HasErrors())
-            return;
-        Impuestos?.Accept(visitor);
-        if(visitor.HasErrors())
-            return;
-        visitor.Visit(this);
-    }
 
     /// <summary>
     /// Formatear un Comprobante 4.0 con complemento Pagos 2.0, se debe enviar como parametro el visitante que visitara cada nodo.
@@ -256,21 +228,17 @@ public class Comprobante40
         visitor.Visit(this);
     }
 
-    public async Task Accept(IVisitorNomina visitor)
-    {
-        var nomina = Complemento?.Nomina?.FirstOrDefault();
-        nomina?.Accept(visitor);
-        visitor.Visit(this);
-    }
-
     public bool IsPagos20()
     {
-        return Complemento?.Pagos is { Count: > 0 };
+        if (Complemento?.Pagos == null) 
+            return false;
+        return Complemento.Pagos.Count != 0;
     }
-    
+
     public bool IsNomina12()
     {
-        return Complemento?.Nomina is { Count: > 0 };
+        if (Complemento?.Nomina == null) 
+            return false;
+        return Complemento.Nomina.Count != 0;
     }
-    
 }

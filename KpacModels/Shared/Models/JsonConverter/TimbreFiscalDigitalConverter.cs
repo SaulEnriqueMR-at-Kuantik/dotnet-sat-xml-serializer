@@ -1,4 +1,4 @@
-using KPac.Domain.Mapping.Xml.TimbreFiscalDigital;
+using KpacModels.Shared.Models.TimbreFiscalDigital;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.Constants;
-using KpacModels.Shared.XmlProcessing.Validator.Interface;
+using KpacModels.Shared.Models.Constants;
 
 namespace KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
 
@@ -24,8 +23,4 @@ public class ImpuestosP
 
     public bool ShouldSerializeTraslados() => Traslados != null && Traslados.Count > 0;
 
-    public void Accept(IVisitorPagos visitor, int numPago)
-    {
-        visitor.Visit(this, numPago);
-    }
 }

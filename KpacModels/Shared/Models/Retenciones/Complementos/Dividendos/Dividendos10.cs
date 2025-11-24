@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.Constants;
+using KpacModels.Shared.Models.Constants;
 using Newtonsoft.Json;
 
-namespace KPac.Domain.Mapping.Xml.Retenciones.Complementos.Dividendos;
+namespace KpacModels.Shared.Models.Retenciones.Complementos.Dividendos;
 
 [XmlRoot("Dividendos", Namespace = Namespaces.Dividendos10)]
 public class Dividendos10

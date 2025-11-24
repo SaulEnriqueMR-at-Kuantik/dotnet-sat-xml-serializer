@@ -1,8 +1,7 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.Constants;
+using KpacModels.Shared.Models.Constants;
 using KpacModels.Shared.XmlProcessing.Formatter.Interface;
-using KpacModels.Shared.XmlProcessing.Validator.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante.Complementos.Nomina;
 
@@ -117,30 +116,5 @@ public class Nomina12
         }
         visitor.VisitTotales(this);
     }
-
-    public async Task Accept(IVisitorNomina visitor)
-    {
-        visitor.Visit(this);
-        
-        visitor.Visit(Emisor);
-        
-        visitor.Visit(Receptor);
-        
-        visitor.Visit(Percepciones);
-        
-        visitor.Visit(Deducciones);
-        
-        visitor.Visit(OtrosPagos);
-        
-        var countOtros =  OtrosPagos?.Count ?? 0;
-        for (var i = 0; i < countOtros; i++)
-        {
-            var otroPago = OtrosPagos?[i];
-            if (otroPago != null)
-                visitor.Visit(otroPago, i + 1);
-        }
-        
-        visitor.VisitTotales(this);
-        
-    }
+    
 }

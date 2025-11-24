@@ -1,4 +1,4 @@
-namespace KpacModels.Shared.Constants;
+namespace KpacModels.Shared.Models.Constants;
 
 public static class Namespaces
 {

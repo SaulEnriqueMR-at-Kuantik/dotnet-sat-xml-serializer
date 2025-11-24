@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.Constants;
+using KpacModels.Shared.Models.Constants;
 using Newtonsoft.Json;
 
-namespace KPac.Domain.Mapping.Xml.Retenciones.Complementos.PagosAExtranjeros;
+namespace KpacModels.Shared.Models.Retenciones.Complementos.PagosAExtranjeros;
 
 [XmlRoot(ElementName = "Pagosaextranjeros", Namespace = Namespaces.PagosAExtranjeros)]
 public class PagosAExtranjeros10

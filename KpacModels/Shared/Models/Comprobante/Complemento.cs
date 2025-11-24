@@ -2,13 +2,13 @@ using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using KPac.Domain.Mapping.JsonConverter;
 using KPac.Domain.Mapping.Xml.Comprobante.Complementos.Impuestoslocales;
-using KPac.Domain.Mapping.Xml.TimbreFiscalDigital;
-using KpacModels.Shared.Constants;
 using KpacModels.Shared.Models.Comprobante.Complementos.Cartaporte;
 using KpacModels.Shared.Models.Comprobante.Complementos.Comercioexterior;
 using KpacModels.Shared.Models.Comprobante.Complementos.LeyendasFiscales;
 using KpacModels.Shared.Models.Comprobante.Complementos.Nomina;
 using KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
+using KpacModels.Shared.Models.Constants;
+using KpacModels.Shared.Models.TimbreFiscalDigital;
 using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;

@@ -1,14 +1,14 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KPac.Domain.Mapping.Xml.Retenciones.Complementos.Dividendos;
-using KPac.Domain.Mapping.Xml.Retenciones.Complementos.EnajenacionAcciones;
-using KPac.Domain.Mapping.Xml.Retenciones.Complementos.Intereses;
-using KPac.Domain.Mapping.Xml.Retenciones.Complementos.PagosAExtranjeros;
-using KPac.Domain.Mapping.Xml.TimbreFiscalDigital;
-using KpacModels.Shared.Constants;
+using KpacModels.Shared.Models.Constants;
+using KpacModels.Shared.Models.Retenciones.Complementos.Dividendos;
+using KpacModels.Shared.Models.Retenciones.Complementos.EnajenacionAcciones;
+using KpacModels.Shared.Models.Retenciones.Complementos.Intereses;
+using KpacModels.Shared.Models.Retenciones.Complementos.PagosAExtranjeros;
+using KpacModels.Shared.Models.TimbreFiscalDigital;
 using Newtonsoft.Json;
 
-namespace KPac.Domain.Mapping.Xml.Retenciones;
+namespace KpacModels.Shared.Models.Retenciones;
 
 [XmlRoot(ElementName = "Retenciones", Namespace = Namespaces.Retenciones20)]
 public class Retenciones20

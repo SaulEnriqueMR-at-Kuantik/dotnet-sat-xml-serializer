@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.Constants;
+using KpacModels.Shared.Models.Constants;
 
 namespace KPac.Domain.Mapping.Xml.Comprobante.Complementos.Impuestoslocales;
 
