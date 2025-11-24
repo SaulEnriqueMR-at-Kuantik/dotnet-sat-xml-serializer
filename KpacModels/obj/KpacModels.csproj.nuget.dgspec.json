@@ -43,25 +43,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "MongoDB.Bson": {
-              "target": "Package",
-              "version": "[3.5.1, )"
-            },
-            "MongoDB.Driver": {
-              "target": "Package",
-              "version": "[3.5.1, )"
-            },
-            "MongoDB.Driver.Core": {
-              "target": "Package",
-              "version": "[2.30.0, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.4, )"
-            },
-            "RestSharp": {
-              "target": "Package",
-              "version": "[112.1.1-alpha.0.13, )"
             }
           },
           "imports": [
