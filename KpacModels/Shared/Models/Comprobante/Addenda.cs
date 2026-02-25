@@ -24,66 +24,66 @@ public class InformacionAdicionalAddenda
 
 public class Cfdi
 {
-    [XmlElement(ElementName = "tipoDocumento")]
+    [XmlAttribute(AttributeName = "tipoDocumento")]
     public string? TipoDocumento { get; set; }
-    [XmlElement(ElementName = "numeroDocumentos")]
+    [XmlAttribute(AttributeName = "numeroDocumentos")]
     public string? NumeroDocumentos { get; set; }
-    [XmlElement(ElementName = "etiqueta1C")]
+    [XmlAttribute(AttributeName = "etiqueta1C")]
     public string? Etiqueta1C { get; set; }
-    [XmlElement(ElementName = "valor1C")]
+    [XmlAttribute(AttributeName = "valor1C")]
     public string? Valor1C { get; set; }
-    [XmlElement(ElementName = "valor10C")]
+    [XmlAttribute(AttributeName = "valor10C")]
     public string? Valor10C { get; set; }
 }
 
 public class Domicilio
 {
-    [XmlElement(ElementName = "calle")]
+    [XmlAttribute(AttributeName = "calle")]
     public string? Calle { get; set; }
-    [XmlElement(ElementName = "noExterior")]
+    [XmlAttribute(AttributeName = "noExterior")]
     public string? NoExterior { get; set; }
-    [XmlElement(ElementName = "noInterior")]
+    [XmlAttribute(AttributeName = "noInterior")]
     public string? NoInterior { get; set; }
-    [XmlElement(ElementName = "colonia")]
+    [XmlAttribute(AttributeName = "colonia")]
     public string? Colonia { get; set; }
-    [XmlElement(ElementName = "municipio")]
+    [XmlAttribute(AttributeName = "municipio")]
     public string? Municipio { get; set; }
-    [XmlElement(ElementName = "estado")]
+    [XmlAttribute(AttributeName = "estado")]
     public string? Estado { get; set; }
-    [XmlElement(ElementName = "pais")]
+    [XmlAttribute(AttributeName = "pais")]
     public string? Pais { get; set; }
-    [XmlElement(ElementName = "codigoPostal")]
+    [XmlAttribute(AttributeName = "codigoPostal")]
     public string? CodigoPostal { get; set; }
 }
 
 public class Rcpr : Domicilio
 {
-    [XmlElement(ElementName = "conector")]
+    [XmlAttribute(AttributeName = "conector")]
     public string? Conector { get; set; }
-    [XmlElement(ElementName = "valor13R")]
+    [XmlAttribute(AttributeName = "valor13R")]
     public string? Valor13R { get; set; }
-    [XmlElement(ElementName = "referencia")]
+    [XmlAttribute(AttributeName = "referencia")]
     public string? Referencia { get; set; }
 }
 
 public class Ptdao
 {
-    [XmlElement(ElementName = "etiqueta1PO")]
+    [XmlAttribute(AttributeName = "etiqueta1PO")]
     public string? Etiqueta1PO { get; set; }
-    [XmlElement(ElementName = "valor1PO")]
+    [XmlAttribute(AttributeName = "valor1PO")]
     public string? Valor1PO { get; set; }
-    [XmlElement(ElementName = "etiqueta2PO")]
+    [XmlAttribute(AttributeName = "etiqueta2PO")]
     public string? Etiqueta2PO { get; set; }
-    [XmlElement(ElementName = "valor2PO")]
+    [XmlAttribute(AttributeName = "valor2PO")]
     public string? Valor2PO { get; set; }
-    [XmlElement(ElementName = "etiqueta3PO")]
+    [XmlAttribute(AttributeName = "etiqueta3PO")]
     public string? Etiqueta3PO { get; set; }
-    [XmlElement(ElementName = "valor3PO")]
+    [XmlAttribute(AttributeName = "valor3PO")]
     public string? Valor3PO { get; set; }
-    [XmlElement(ElementName = "etiqueta4PO")]
+    [XmlAttribute(AttributeName = "etiqueta4PO")]
     public string? Etiqueta4PO { get; set; }
-    [XmlElement(ElementName = "valor4PO")]
+    [XmlAttribute(AttributeName = "valor4PO")]
     public string? Valor4PO { get; set; }
-    [XmlElement(ElementName = "etiqueta5PO")]
+    [XmlAttribute(AttributeName = "etiqueta5PO")]
     public string? Etiqueta5PO { get; set; }
 }
