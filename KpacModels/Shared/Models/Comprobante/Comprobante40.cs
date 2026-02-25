@@ -139,7 +139,6 @@ public class Comprobante40
     private string? _addendaXml;
     
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [XmlIgnore]
     [XmlElement(ElementName = "Addenda", Namespace = Namespaces.CfdiLocation)]
     public Addenda? Addenda { get; set; }
 
