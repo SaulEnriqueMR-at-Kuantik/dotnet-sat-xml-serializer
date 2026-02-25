@@ -4,21 +4,21 @@ namespace KpacModels.Shared.Models.Comprobante;
 
 public class Addenda
 {
-    [XmlElement(ElementName = "InformacionAdicional")]
+    [XmlElement(ElementName = "InformacionAdicional", Namespace = "")]
     public List<InformacionAdicionalAddenda>? InformacionAdicional { get; set; }
 }
 
 public class InformacionAdicionalAddenda
 {
-    [XmlElement(ElementName = "CFDI ")]
+    [XmlElement(ElementName = "CFDI", Namespace = "")]
     public Cfdi? CFDI { get; set; }
-    [XmlElement(ElementName = "EMSR")]
+    [XmlElement(ElementName = "EMSR", Namespace = "")]
     public Domicilio? EMSR { get; set; }
-    [XmlElement(ElementName = "EXP")]
+    [XmlElement(ElementName = "EXP", Namespace = "")]
     public Domicilio? EXP { get; set; }
-    [XmlElement(ElementName = "R")]
+    [XmlElement(ElementName = "R", Namespace = "")]
     public Rcpr? R { get; set; }
-    [XmlElement(ElementName = "PTDAo")]
+    [XmlElement(ElementName = "PTDAo", Namespace = "")]
     public Ptdao? PTDAo {  get; set; }
 }
 
