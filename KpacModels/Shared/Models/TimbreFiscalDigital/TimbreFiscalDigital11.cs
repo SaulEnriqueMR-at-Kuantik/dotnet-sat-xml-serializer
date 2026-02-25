@@ -30,4 +30,8 @@ public class TimbreFiscalDigital11
     [XmlAttribute(AttributeName = "SelloSAT")]
     [JsonPropertyName("SelloSat")]
     public string SelloSat { set; get; }
+    
+    [XmlAttribute(AttributeName = "SelloCFD")]
+    [JsonPropertyName("SelloCfd")]
+    public string SelloCfd {  set; get; }
 }
