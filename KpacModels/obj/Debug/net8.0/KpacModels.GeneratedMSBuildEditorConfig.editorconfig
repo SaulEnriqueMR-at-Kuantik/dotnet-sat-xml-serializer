@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KpacModels
-build_property.ProjectDir = /Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/
+build_property.ProjectDir = /Users/diegoarellano/RiderProjects/dotnet-sat-xml-serializer/KpacModels/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -19,7 +19,7 @@ public class InformacionAdicionalAddenda
     [XmlElement(ElementName = "R", Namespace = "")]
     public Rcpr? R { get; set; }
     [XmlElement(ElementName = "PTDAo", Namespace = "")]
-    public Ptdao? PTDAo {  get; set; }
+    public List<Ptdao>? PTDAo {  get; set; }
 }
 
 public class Cfdi

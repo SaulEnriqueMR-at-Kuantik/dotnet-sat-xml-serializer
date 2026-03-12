@@ -1,5 +1,6 @@
 using System.Text;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 using KpacModels.Shared.Models.Comprobante;
 using KpacModels.Shared.Models.Retenciones;
@@ -117,6 +118,34 @@ public static class CfdiSerializer
         var serializer = new XmlSerializer(typeof(T));
         using var reader = new StringReader(xmlString);
         return (T)serializer.Deserialize(reader)!;
+    }
+    
+    /// <summary>
+    /// Función para serializar cualquier modelo a XML
+    /// </summary>
+    /// <typeparam name="T">Tipo del objeto</typeparam>
+    /// <param name="objeto">Objeto a serializar</param>
+    /// <returns>XML en formato string</returns>
+    public static string? SerializeXml<T>(T objeto)
+    {
+        try
+        {
+            if (objeto == null)
+                return null;
+
+            var serializer = new XmlSerializer(typeof(T));
+
+            using var writer = new Utf8StringWriter();
+            using var xmlWriter = XmlWriter.Create(writer);
+
+            serializer.Serialize(xmlWriter, objeto);
+
+            return writer.ToString();
+        }
+        catch (Exception)
+        {
+            return null;
+        }
     }
 
     private class Utf8StringWriter : StringWriter

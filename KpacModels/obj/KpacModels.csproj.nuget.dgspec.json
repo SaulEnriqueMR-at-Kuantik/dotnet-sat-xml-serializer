@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/KpacModels.csproj": {}
+    "/Users/diegoarellano/RiderProjects/dotnet-sat-xml-serializer/KpacModels/KpacModels.csproj": {}
   },
   "projects": {
-    "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/KpacModels.csproj": {
+    "/Users/diegoarellano/RiderProjects/dotnet-sat-xml-serializer/KpacModels/KpacModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/KpacModels.csproj",
+        "projectUniqueName": "/Users/diegoarellano/RiderProjects/dotnet-sat-xml-serializer/KpacModels/KpacModels.csproj",
         "projectName": "Kuantik.XmlModels",
-        "projectPath": "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/KpacModels.csproj",
-        "packagesPath": "/Users/DiegoArellano/.nuget/packages/",
-        "outputPath": "/Users/DiegoArellano/RiderProjects/KpacModels/KpacModels/obj/",
+        "projectPath": "/Users/diegoarellano/RiderProjects/dotnet-sat-xml-serializer/KpacModels/KpacModels.csproj",
+        "packagesPath": "/Users/diegoarellano/.nuget/packages/",
+        "outputPath": "/Users/diegoarellano/RiderProjects/dotnet-sat-xml-serializer/KpacModels/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/DiegoArellano/.nuget/NuGet/NuGet.Config"
+          "/Users/diegoarellano/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -43,9 +43,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[18.3.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.4, )"
+            },
+            "xunit.v3": {
+              "target": "Package",
+              "version": "[3.2.2, )"
             }
           },
           "imports": [
@@ -64,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/DiegoArellano/.dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.418/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
