@@ -18,8 +18,9 @@ public class InformacionAdicionalAddenda
     public Domicilio? EXP { get; set; }
     [XmlElement(ElementName = "R", Namespace = "")]
     public Rcpr? R { get; set; }
+
     [XmlElement(ElementName = "PTDAo", Namespace = "")]
-    public List<Ptdao>? PTDAo {  get; set; }
+    public List<Ptdao>? PTDAo { get; set; }
 }
 
 public class Cfdi

@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
+using KPac.Domain.Constants;
 using KpacModels.Shared.Models.Constants;
 
 namespace KpacModels.Shared.Models.TimbreFiscalDigital;
@@ -15,9 +16,24 @@ public class TimbreFiscalDigital11
     [JsonPropertyName("Uuid")]
     public string Uuid { set; get; }
     
-    [XmlAttribute(AttributeName = "FechaTimbrado")]
+    /*[XmlAttribute(AttributeName = "FechaTimbrado")]
+    [JsonPropertyName("FechaTimbrado")]
+    public DateTime FechaTimbrado { get; set; }*/
+    [XmlIgnore]
     [JsonPropertyName("FechaTimbrado")]
     public DateTime FechaTimbrado { get; set; }
+    
+    [JsonIgnore]
+    [XmlAttribute(AttributeName = "FechaTimbrado")]
+    public string? FechaTimbradoXml
+    {
+        get => FechaTimbrado.ToString(DateIsoFormats.ISO_8601);
+        set
+        {
+            if (value != null) FechaTimbrado = DateTime.Parse(value);
+        }
+    }
+    
     
     [XmlAttribute(AttributeName = "RfcProvCertif")]
     [JsonPropertyName("RfcProvCertif")]
