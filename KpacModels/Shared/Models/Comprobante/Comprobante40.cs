@@ -136,20 +136,7 @@ public class Comprobante40
     [XmlElement(ElementName = "Impuestos", Namespace = Namespaces.CfdiLocation)]
     public Impuestos? Impuestos { get; set; }
     
-    private string? _addendaXml;
     
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [XmlElement(ElementName = "Addenda", Namespace = Namespaces.CfdiLocation)]
-    public Addenda? Addenda { get; set; }
-
-    [JsonPropertyName("AddendaString")]
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [XmlIgnore]
-    public string? AddendaXml 
-    { 
-        get => _addendaXml;
-        set => _addendaXml = value;
-    }
     
     [XmlIgnore]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -168,6 +155,21 @@ public class Comprobante40
     [JsonPropertyName("Complemento")]
     [XmlElement(ElementName = "Complemento", Namespace = Namespaces.CfdiLocation)]
     public Complemento? Complemento { get; set; }
+    
+    private string? _addendaXml;
+    
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [XmlElement(ElementName = "Addenda", Namespace = Namespaces.CfdiLocation)]
+    public Addenda? Addenda { get; set; }
+
+    [JsonPropertyName("AddendaString")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [XmlIgnore]
+    public string? AddendaXml 
+    { 
+        get => _addendaXml;
+        set => _addendaXml = value;
+    }
     
     public async Task Format(IVisitorFormatter visitor)
     {
