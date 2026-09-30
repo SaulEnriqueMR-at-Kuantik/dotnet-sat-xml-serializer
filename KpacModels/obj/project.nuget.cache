@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "88LmP3HDXDo=",
+  "dgSpecHash": "W1DS84TpkKc=",
   "success": true,
   "projectFilePath": "/Users/diegoarellano/RiderProjects/dotnet-sat-xml-serializer/KpacModels/KpacModels.csproj",
   "expectedPackageFiles": [
-    "/Users/diegoarellano/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512"
+    "/Users/diegoarellano/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512",
+    "/Users/diegoarellano/.nuget/packages/microsoft.netcore.app.ref/8.0.27/microsoft.netcore.app.ref.8.0.27.nupkg.sha512",
+    "/Users/diegoarellano/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.27/microsoft.aspnetcore.app.ref.8.0.27.nupkg.sha512"
   ],
   "logs": []
 }
