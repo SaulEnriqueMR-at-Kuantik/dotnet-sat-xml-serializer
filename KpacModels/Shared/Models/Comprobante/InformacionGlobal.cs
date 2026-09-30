@@ -1,6 +1,5 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -22,9 +21,4 @@ public class InformacionGlobal
     [JsonPropertyName("SrcAnio")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public int? SrcAnio {  get; set; }
-
-    public void Accept(IVisitorFormatter visitor)
-    {
-        visitor.Visit(this);
-    }
 }

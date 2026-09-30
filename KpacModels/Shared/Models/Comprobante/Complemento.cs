@@ -9,7 +9,6 @@ using KpacModels.Shared.Models.Comprobante.Complementos.Nomina;
 using KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
 using KpacModels.Shared.Models.Constants;
 using KpacModels.Shared.Models.TimbreFiscalDigital;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -68,25 +67,4 @@ public class Complemento
     public List<LeyendasFiscales10>? LeyendasFiscales { get; set; }
 
     public bool ShouldSerializeLeyendasFiscales() => LeyendasFiscales != null && LeyendasFiscales.Count > 0;
-
-
-    public async Task Format(IVisitorFormatterPagos visitor)
-    {
-        visitor.Visit(this);
-        var pago = Pagos?.FirstOrDefault();
-        if (pago != null)
-        {
-            await pago.Format(visitor);
-        }
-    }
-    
-    public async Task Format(IVisitorFormatterNomina visitor)
-    {
-        visitor.Visit(this);
-        var nomina = Nomina?.FirstOrDefault();
-        if (nomina != null)
-        {
-            await nomina.Format(visitor);
-        }
-    }
 }

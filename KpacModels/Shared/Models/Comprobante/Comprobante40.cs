@@ -1,8 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using KpacModels.Shared.Models.Constants;
-using KpacModels.Shared.XmlProcessing.Formatter;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -169,64 +167,6 @@ public class Comprobante40
     [XmlElement(ElementName = "Complemento", Namespace = Namespaces.CfdiLocation)]
     public Complemento? Complemento { get; set; }
     
-    public async Task Format(IVisitorFormatter visitor)
-    {
-        visitor.SaveAttributeBase(this);
-        if (Conceptos != null)
-        {
-            var conceptosLenght = Conceptos.Count;
-            for (var i = 0; i < conceptosLenght; i++)
-            {
-                var concepto = Conceptos[i];
-                await concepto.Accept(visitor, i + 1);
-            }
-        }
-        if (CfdisRelacionados != null)
-        {
-            var cfdiRelacionadosCount = CfdisRelacionados.Count;
-            for (var i = 0; i < cfdiRelacionadosCount; i++)
-            {
-                var cfdiRelacionado = CfdisRelacionados[i];
-                cfdiRelacionado.Accept(visitor, i + 1);
-            }
-        }
-        Emisor?.Accept(visitor);
-        InformacionGlobal?.Accept(visitor);
-        Receptor?.Accept(visitor);
-        if(Impuestos == null) Impuestos = new Impuestos();
-        Impuestos.Accept(visitor);
-        visitor.Visit(this);
-        visitor.Clean();
-    }
-
-    /// <summary>
-    /// Formatear un Comprobante 4.0 con complemento Pagos 2.0, se debe enviar como parametro el visitante que visitara cada nodo.
-    /// Realiza los calculos de ImpuestosP y Totales.
-    /// </summary>
-    /// <param name="visitor">Interfaz del visitante de pagos 2.0</param>
-    public async Task Format(IVisitorFormatterPagos visitor)
-    {
-        visitor.Visit(this);
-        visitor.Visit(Complemento);
-        if(Complemento != null)
-            await Complemento.Format(visitor);
-    }
-
-    /// <summary>
-    /// Formatear un Comprobante 4.0 con complemento Pagos 2.0, se debe enviar como parametro el visitante que visitara cada nodo.
-    /// Realiza los calculos de ImpuestosP y Totales.
-    /// </summary>
-    /// <param name="visitor">Interfaz del visitante de pagos 2.0</param>
-    /// <param name="configuracion"></param>
-    public async Task Format(IVisitorFormatterNomina visitor, SettingsFormatter? configuracion)
-    {
-        visitor.Visit(this, configuracion);
-        visitor.Visit(Complemento);
-        if(Complemento != null)
-            await Complemento.Format(visitor);
-        visitor.Visit(this);
-    }
-
     public bool IsPagos20()
     {
         if (Complemento?.Pagos == null) 

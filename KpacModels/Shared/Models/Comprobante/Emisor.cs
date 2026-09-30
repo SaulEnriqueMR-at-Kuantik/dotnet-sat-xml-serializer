@@ -1,6 +1,5 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -22,9 +21,5 @@ public class Emisor
     [JsonPropertyName("FacAtrAdquirente")]
     [XmlAttribute(AttributeName = "FacAtrAdquirente")]
     public string? FacAtrAdquirent { set; get; }
-    
-    public void Accept(IVisitorFormatter visitor)
-    {
-        visitor.Visit(this);
-    }
+
 }

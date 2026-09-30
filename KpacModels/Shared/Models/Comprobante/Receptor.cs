@@ -1,6 +1,5 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -35,10 +34,4 @@ public class Receptor
     [JsonPropertyName("NumRegIdTrib")]
     [XmlAttribute(AttributeName = "NumRegIdTrib")]
     public string? NumRegIdTrib { set; get; }
-    
-
-    public void Accept(IVisitorFormatter visitor)
-    {
-        visitor.Visit(this);
-    }
 }

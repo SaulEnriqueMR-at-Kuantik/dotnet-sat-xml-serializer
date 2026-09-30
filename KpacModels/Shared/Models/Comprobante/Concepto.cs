@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using KpacModels.Shared.Models.Constants;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -112,11 +111,5 @@ public class Concepto
     public List<Parte>? Parte { get; set; } 
     
     public bool ShouldSerializeParte() => Parte != null && Parte.Count > 0;
-    
-    
-    public async Task Accept(IVisitorFormatter visitor, int numConcepto)
-    {
-        visitor.Visit(this, numConcepto);
-    }
-    
+
 }

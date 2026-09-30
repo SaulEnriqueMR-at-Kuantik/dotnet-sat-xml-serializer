@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using KpacModels.Shared.Models.Constants;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante;
 
@@ -43,16 +42,4 @@ public class Impuestos
         return !string.IsNullOrWhiteSpace(TotalImpuestosRetenidos);
     }
 
-    public void Accept(IVisitorFormatter visitor)
-    {
-        visitor.Visit(this);
-    }
-
-    public void Clear()
-    {
-        Retenciones?.Clear();
-        Traslados?.Clear();
-        TotalImpuestosRetenidos = null;
-        TotalImpuestosTrasladados = null;
-    }
 }

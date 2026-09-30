@@ -1,6 +1,5 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
 
@@ -60,12 +59,4 @@ public class Totales
     [JsonPropertyName("MontoTotalPagos")]
     public string MontoTotalPagos { get; set; }
     
-    public void Accept(
-        IVisitorFormatterPagos visitor,
-        decimal montoTotal,
-        List<RetencionP> retencionesTotales,
-        List<TrasladoP> trasladosTotales)
-    {
-        visitor.Visit(this, montoTotal, retencionesTotales, trasladosTotales);
-    }
 }

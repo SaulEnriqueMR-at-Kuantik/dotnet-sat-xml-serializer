@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using KpacModels.Shared.Models.Constants;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante.Complementos.Nomina;
 
@@ -88,33 +87,5 @@ public class Nomina12
 
     public bool ShouldSerializeIncapacidades() => Incapacidades != null && Incapacidades.Count > 0;
     
-    public async Task Format(IVisitorFormatterNomina visitor)
-    {
-        visitor.Visit(this);
-        visitor.Visit(Emisor);
-        await visitor.Visit(Receptor);
-        visitor.Visit(Percepciones);
-        var countIncapacidades = Incapacidades?.Count ?? 0;
-        for (var i = 0; i < countIncapacidades; i++)
-        {
-            var incapacidad = Incapacidades?[i];
-            if (incapacidad != null)
-                visitor.Visit(incapacidad, i + 1);
-        }
-        
-        visitor.Visit(Incapacidades, Percepciones?.Percepcion);
-        
-        visitor.Visit(Deducciones);
-        
-        visitor.Visit(OtrosPagos);
-        var countOtrosPagos = OtrosPagos?.Count ?? 0;
-        for (var i = 0; i < countOtrosPagos; i++)
-        {
-            var otroPago = OtrosPagos?[i];
-            if (otroPago != null)
-                visitor.Visit(otroPago, i + 1);
-        }
-        visitor.VisitTotales(this);
-    }
     
 }

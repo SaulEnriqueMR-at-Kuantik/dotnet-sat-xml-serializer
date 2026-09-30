@@ -1,20 +1,11 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using KpacModels.Shared.Models.Constants;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
 
 public class DoctoRelacionado
 {
-    // [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    // [XmlIgnore]
-    // public string? IdPago { get; set; }
-
-    [XmlAttribute(AttributeName = "IdDocumento")]
-    [JsonPropertyName("IdDocumento")]
-    public string IdDocumento { get; set; }
-
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("Serie")]
     [XmlAttribute(AttributeName = "Serie")]
@@ -64,13 +55,6 @@ public class DoctoRelacionado
     [XmlElement(ElementName = "ImpuestosDR", Namespace = Namespaces.Pagos20)]
     public ImpuestosDR? Impuestos { get; set; }
 
-    public bool ShouldSerializeImpuestosDr() => Impuestos != null;
-    
+    public bool ShouldSerializeImpuestos() => Impuestos != null;
 
-    public async Task Accept(IVisitorFormatterPagos visitor, int numPago, int numDocto)
-    {
-        await visitor.Visit(this, numPago, numDocto);
-        Impuestos?.Accept(visitor, numPago, numDocto);
-        visitor.SaveImpuestosDr(Impuestos, Equivalencia);
-    }
 }

@@ -1,18 +1,10 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
 
 namespace KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
 
-public class TrasladoDR : ICloneable
+public class TrasladoDR
 {
-    // [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    // [XmlIgnore]
-    // public string? IdDocumento { get; set; }
-    //
-    // [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    // [XmlIgnore]
-    // public string? IdPago { get; set; }
 
     [XmlAttribute(AttributeName = "BaseDR")]
     [JsonPropertyName("Base")]
@@ -36,21 +28,4 @@ public class TrasladoDR : ICloneable
     [XmlAttribute(AttributeName = "ImporteDR")]
     public string? Importe { get; set; }
     
-
-    public void Accept(IVisitorFormatterPagos visit, int numPago, int numDocto, int numTraslado)
-    {
-        visit.Visit(this, numPago, numDocto, numTraslado);
-    }
-
-    public object Clone()
-    {
-        return new TrasladoDR
-        {
-            Impuesto = this.Impuesto,
-            Base = this.Base,
-            Importe = this.Importe,
-            TipoFactor = this.TipoFactor,
-            TasaOCuota = this.TasaOCuota,
-        };
-    }
 }

@@ -1,8 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using KpacModels.Shared.Models.Constants;
-using KpacModels.Shared.XmlProcessing.Formatter.Interface;
-using KpacModels.Shared.XmlProcessing.Formatter.Pagos;
 
 namespace KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
 
@@ -98,22 +96,4 @@ public class Pago
 
     public bool ShouldSerializeImpuestos() => Impuestos != null;
     
-
-    public async Task Accept(IVisitorFormatterPagos visitor, int numPago)
-    {
-        await visitor.Visit(this, numPago);
-        var countDr = DocumentosRelacionados.Count;
-        var monto = decimal.Zero;
-        for (int i = 0; i < countDr; i++)
-        {
-            var documentoRelacionado = DocumentosRelacionados[i];
-            await documentoRelacionado.Accept(visitor, numPago, i + 1);
-            var equivalencia = decimal.Parse(documentoRelacionado.Equivalencia ?? "1");
-            var tipoCambioDr = Math.Round(1 / equivalencia, 10);
-            monto += PagosFormatHelper.CalculateMonto(documentoRelacionado.ImportePagado, tipoCambioDr);
-        }
-
-        visitor.Visit(this, monto);
-        Impuestos = visitor.Visit(Impuestos);
-    }
 }
