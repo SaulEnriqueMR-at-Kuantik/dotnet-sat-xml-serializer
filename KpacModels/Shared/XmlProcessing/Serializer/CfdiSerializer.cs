@@ -56,6 +56,7 @@ public static class CfdiSerializer
             {
                 var schemaLocations = SerializeXml(xmlWriter, retenciones, null);
                 var xmlCompleto = ConvertUtils.AddSchemaLocation(writer.ToString(), schemaLocations);
+                xmlCompleto = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" + xmlCompleto;
                 return (xmlCompleto, null);
             }
             finally
