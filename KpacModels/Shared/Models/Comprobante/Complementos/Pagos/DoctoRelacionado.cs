@@ -6,6 +6,12 @@ namespace KpacModels.Shared.Models.Comprobante.Complementos.Pagos;
 
 public class DoctoRelacionado
 {
+    
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("IdDocumento")]
+    [XmlAttribute(AttributeName = "IdDocumento")]
+    public string? IdDocumento { get; set; }
+    
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("Serie")]
     [XmlAttribute(AttributeName = "Serie")]

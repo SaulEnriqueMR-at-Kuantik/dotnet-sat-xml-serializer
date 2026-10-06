@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("XML models for CFDI")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7869f2e9ff36b47a3eb2b8aef39c31fb73be6ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+366dd9060de54b410b066bd61b647c7a1fb0f3cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("KpacModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KpacModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
