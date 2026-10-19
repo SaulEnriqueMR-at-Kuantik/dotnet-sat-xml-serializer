@@ -78,4 +78,9 @@ public static class Namespaces
     public const string SchemaPagosAExtranjeros =
         " http://www.sat.gob.mx/esquemas/retencionpago/1/pagosaextranjeros http://www.sat.gob.mx/esquemas/retencionpago/1/pagosaextranjeros/pagosaextranjeros.xsd";
         
+    //Namespace para Hidrocarburos Y Petroliferos 1.0
+    public const string HidrocarburosPetroliferos = "http://www.sat.gob.mx/hidrocarburospetroliferos";
+    //Schema Location para Hidrocarburos Y Petroliferos 1.0
+    public const string SchemaHidrocarburosPetroliferos =
+        " http://www.sat.gob.mx/hidrocarburospetroliferos http://www.sat.gob.mx/sitio_internet/cfd/hidrocarburospetroliferos.xsd";
 }

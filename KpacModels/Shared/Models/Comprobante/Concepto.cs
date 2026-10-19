@@ -108,8 +108,16 @@ public class Concepto
      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonPropertyName("Parte")]
     [XmlElement(ElementName = "Parte", Namespace = Namespaces.CfdiLocation)]
-    public List<Parte>? Parte { get; set; } 
+    public List<Parte>? Parte { get; set; }
     
+
     public bool ShouldSerializeParte() => Parte != null && Parte.Count > 0;
+    
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("ComplementoConcepto")]
+    [XmlElement(ElementName = "ComplementoConcepto", Namespace = Namespaces.CfdiLocation)]
+    public ComplementoConcepto? ComplementoConcepto { get; set; }
+
+    public bool ShouldSerializeComplementoConcepto()=> ComplementoConcepto != null;
 
 }

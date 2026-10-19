@@ -88,7 +88,7 @@ public static class CfdiSerializer
         {
             var serializer = new XmlSerializer(typeof(Comprobante40));
             //Crear los NameSpaces
-            (namespaces, schemaLocations) = NamespacesLocation.BuildNameSpacesComprobante(comprobante.Complemento);
+            (namespaces, schemaLocations) = NamespacesLocation.BuildNameSpacesComprobante(comprobante.Complemento, comprobante.Conceptos);
 
             // Serializar el objeto a XML
             serializer.Serialize(xmlWriter, comprobante, namespaces);

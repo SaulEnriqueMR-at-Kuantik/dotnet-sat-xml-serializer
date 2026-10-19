@@ -12,7 +12,11 @@ public static class NamespacesLocation
     /// <summary>
     /// Construcción de los namespaces de a cuerdo los complementos que existan en el comprobante.
     /// </summary>
-    public static (XmlSerializerNamespaces namespaces, string schemaLocations)  BuildNameSpacesComprobante(Complemento? complemento)
+    public static (
+        XmlSerializerNamespaces namespaces, 
+        string schemaLocations)  BuildNameSpacesComprobante(
+            Complemento? complemento,
+            List<Concepto> conceptos)
     {
         var namespaces = new XmlSerializerNamespaces();
         var schemaLocations = new StringBuilder();
@@ -20,6 +24,25 @@ public static class NamespacesLocation
         namespaces.Add("xsi", Namespaces.XsiLocation);
         namespaces.Add("cfdi", Namespaces.CfdiLocation);
         schemaLocations.Append(Namespaces.CfdiSchemaLocation);
+        
+        var namespacesConcepto = new HashSet<string>();
+        foreach (var concepto in conceptos)
+        {
+            if (concepto.ComplementoConcepto != null)
+            {
+                namespacesConcepto.Add("hidrocarburospetroliferos");
+            }
+        }
+
+        foreach (var ns in namespacesConcepto)
+        {
+            if (ns == "hidrocarburospetroliferos")
+            {
+                namespaces.Add("hidrocarburospetroliferos", Namespaces.HidrocarburosPetroliferos);
+                schemaLocations.Append($" {Namespaces.SchemaHidrocarburosPetroliferos}");
+            }
+        }
+        
         if (complemento != null)
         {
             if (complemento.TimbreFiscalDigital != null)
